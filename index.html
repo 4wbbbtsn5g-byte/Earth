@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoHarmony Foundation</title>
+    <style>
+        /* 기본 스타일 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        html, body {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: #333;
+            background-color: #fff;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+
+        header h1 {
+            color: #06A77D;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #06A77D;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 100px 15%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* 색상 포인트 */
+        .highlight {
+            color: #FFD166;
+            font-weight: bold;
+        }
+
+        /* 홈 섹션 */
+        #home {
+            background: linear-gradient(135deg, #FFFBE6, #D6F8D6);
+            text-align: center;
+        }
+
+        #home h2 {
+            font-size: 2.5rem;
+            color: #06A77D;
+            margin-bottom: 15px;
+        }
+
+        #home p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        /* 소개 */
+        #about {
+            background-color: #ffffff;
+        }
+
+        #about h2 {
+            color: #06A77D;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* 핵심 활동 */
+        #activities {
+            background-color: #F7FFF7;
+        }
+
+        #activities h2 {
+            color: #FFD166;
+            margin-bottom: 20px;
+        }
+
+        #activities ul {
+            list-style: none;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        #activities li::before {
+            content: "🐝 ";
+        }
+
+        /* 캠페인 참여 */
+        #campaign {
+            background-color: #FFFBE6;
+        }
+
+        #campaign h2 {
+            color: #06A77D;
+            margin-bottom: 15px;
+        }
+
+        #campaign button {
+            background-color: #FFD166;
+            color: #333;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        #campaign button:hover {
+            background-color: #06A77D;
+            color: white;
+        }
+
+        /* 뉴스/스토리 */
+        #news {
+            background-color: #F7FFF7;
+        }
+
+        #news h2 {
+            color: #06A77D;
+            margin-bottom: 20px;
+        }
+
+        .story {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .story h3 {
+            color: #FFD166;
+            margin-bottom: 10px;
+        }
+
+        /* 후원 / 문의 */
+        #contact {
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        #contact h2 {
+            color: #06A77D;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            width: 100%;
+            background-color: #FFD166;
+            border: none;
+            padding: 12px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        form button:hover {
+            background-color: #06A77D;
+            color: white;
+        }
+
+        footer {
+            background-color: #06A77D;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            section {
+                padding: 100px 10%;
+            }
+
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌸 EcoHarmony Foundation</h1>
+        <nav>
+            <a href="#home">홈</a>
+            <a href="#about">소개</a>
+            <a href="#activities">핵심활동</a>
+            <a href="#campaign">캠페인</a>
+            <a href="#news">뉴스</a>
+            <a href="#contact">후원/문의</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>“다양성이 지구의 음악이다”</h2>
+        <p>생태계의 조화와 꿀벌의 날개짓이 만드는 조용한 기적,<br>
+        <span class="highlight">EcoHarmony Foundation</span>이 함께합니다.</p>
+    </section>
+
+    <section id="about">
+        <h2>🌿 재단 소개</h2>
+        <p>에코하모니 재단은 생태계 다양성을 보호하고, 꿀벌과 같은 
+        작은 생명들의 서식 환경을 회복하기 위해 만들어졌습니다.  
+        자연은 서로 다른 존재들이 어우러져 완성되는 조화로운 음악과 같습니다.  
+        우리는 교육, 참여, 실천을 통해 그 하모니를 다시 되찾고자 합니다.</p>
+    </section>
+
+    <section id="activities">
+        <h2>🐝 핵심 활동</h2>
+        <ul>
+            <li>도시 내 꿀벌 서식지 조성 및 꽃밭 가꾸기 프로젝트</li>
+            <li>학교와 지역사회를 연결한 생태 교육 캠페인</li>
+            <li>벌·곤충 다양성 조사 및 시민참여형 생태지도 제작</li>
+            <li>지역 농가와 협력한 친환경 벌꿀 생산 지원</li>
+        </ul>
+    </section>
+
+    <section id="campaign">
+        <h2>🌸 캠페인 참여</h2>
+        <p>지구의 작은 생명을 지키는 일에 함께해주세요!  
+        꽃 한 송이 심기부터 꿀벌 지킴이 챌린지까지,  
+        당신의 손길이 생태계의 균형을 되살립니다.</p><br>
+        <button onclick="joinCampaign()">참여하기</button>
+    </section>
+
+    <section id="news">
+        <h2>📢 뉴스 & 스토리</h2>
+        <div class="story">
+            <h3>‘꽃길 프로젝트’ 첫 번째 도시 개장!</h3>
+            <p>서울시 도심 속 자투리 공간에 시민들이 함께 만든 
+            꿀벌정원이 조성되었습니다. 도심 속 자연의 회복이 시작됩니다.</p>
+        </div>
+        <div class="story">
+            <h3>청소년 생태 기자단 모집</h3>
+            <p>에코하모니 재단은 환경과 생태를 사랑하는 청소년 기자단을 모집합니다.  
+            당신의 시선으로 자연의 이야기를 전해주세요.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>💛 후원 및 문의</h2>
+        <form onsubmit="return sendForm(event)">
+            <input type="text" placeholder="이름" required>
+            <input type="email" placeholder="이메일" required>
+            <textarea rows="5" placeholder="문의 내용을 입력해주세요." required></textarea>
+            <button type="submit">보내기</button>
+        </form>
+    </section>
+
+    <footer>
+        © 2025 EcoHarmony Foundation | 제작: 충렬여고 1학년 6반
+    </footer>
+
+    <script>
+        // JS: 간단한 인터랙션
+        function joinCampaign() {
+            alert("감사합니다! 🌸 캠페인 참여가 등록되었습니다.");
+        }
+
+        function sendForm(e) {
+            e.preventDefault();
+            alert("문의가 성공적으로 전송되었습니다. 감사합니다 🐝");
+            e.target.reset();
+            return false;
+        }
+    </script>
+</body>
+</html>
